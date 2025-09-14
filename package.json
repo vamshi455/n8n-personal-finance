@@ -1,0 +1,39 @@
+{
+  "name": "personal-finance-agent",
+  "version": "1.0.0",
+  "description": "AI-powered personal finance management system",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "npm run install-frontend && npm run install-backend",
+    "install-frontend": "cd frontend && npm install",
+    "install-backend": "cd backend && npm install",
+    "install-ml": "cd ml-models && npm install",
+    "dev": "concurrently \"npm run dev-backend\" \"npm run dev-frontend\"",
+    "dev-frontend": "cd frontend && npm start",
+    "dev-backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "setup": "npm run install-all && npm run setup-db",
+    "setup-db": "cd backend && node scripts/setup-database.js",
+    "docker-up": "docker-compose up -d",
+    "docker-down": "docker-compose down",
+    "n8n": "cd backend && npm run n8n"
+  },
+  "keywords": [
+    "personal-finance",
+    "ai",
+    "machine-learning",
+    "react",
+    "nodejs",
+    "n8n"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
